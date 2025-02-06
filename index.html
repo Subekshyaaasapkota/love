@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(45deg, #ff6f61, #ffcccb);
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: white;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .container {
+            display: inline-block;
+        }
+
+        button {
+            font-size: 20px;
+            padding: 15px 30px;
+            border-radius: 25px;
+            border: none;
+            color: white;
+            background-color: #ff4b5c;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #ff3c4a;
+            transform: scale(1.1);
+        }
+
+        #yesBtn {
+            background-color: #4CAF50;
+        }
+
+        #yesBtn:hover {
+            background-color: #45a049;
+        }
+
+        #noBtn {
+            margin: 5px 150px;
+            transition: 0.2s;
+            position: absolute;
+        }
+
+        #noBtn:focus {
+            outline: none;
+        }
+
+        /* Add a small animation to the button */
+        @keyframes moveButton {
+            0% { transform: rotate(0deg); }
+            25% { transform: rotate(10deg); }
+            50% { transform: rotate(-10deg); }
+            75% { transform: rotate(5deg); }
+            100% { transform: rotate(0deg); }
+        }
+
+        #noBtn:hover {
+            animation: moveButton 0.5s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Do you love me? ❤</h1> 
+        <button id="yesBtn" onclick="location.href='love.html'">Yes</button>
+        <button id="noBtn" onmouseover="moveNoButton()">No</button>
+    </div>
+
+    <script>
+        function moveNoButton() {
+            let x = Math.random() * (window.innerWidth - 100);
+            let y = Math.random() * (window.innerHeight - 50);
+            document.getElementById("noBtn").style.left = `${x}px`;
+            document.getElementById("noBtn").style.top = `${y}px`;
+        }
+    </script>
+
+</body>
+</html>
